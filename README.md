@@ -1,6 +1,4 @@
-# backend
-
-My Django Cookiecutter Template
+# Django Geoapp + Vue.js 3
 
 [![Built with Cookiecutter Django](https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg?logo=cookiecutter)](https://github.com/cookiecutter/cookiecutter-django/)
 [![Black code style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
@@ -20,15 +18,21 @@ License: MIT
 
 * Authenticated users can add, import, or export data using django forms.
 
+* Use Vue.js 3 (using Vite ) and axios to fetch the data from the backend and display it in a Bootstrap Table.
+
 ### Project Preview
 
 * [Youtube](https://www.youtube.com/watch?v=dqDSYeppbGI)
 
-* [GIF](./geoapp.gif)
+* [Backend GIF](./geoapp-backend.gif)
+
+* [Frontend GIF](./geoapp-frontend.gif)
 
 
 
 ### To get started with this project
+
+##### Backend
 
 * Make sure that both Docker and docker-compose are installed in your system.
 
@@ -52,13 +56,23 @@ License: MIT
 
 ``` docker-compose -f local.yml up ```
 
-
 * Open the web browser and go to ` http://localhost:8000/ ` to see the results.
 
 
+##### Frontend
+
+* Keep the backend server running. and open a new terminal.
+
+* Change directory to frontend directory ``` cd frontend ```
+
+* Create a .env file inside the frontend directory and add the following line to it ``` VITE_API_ENDPOINT=http://127.0.0.1:8000/api/geoapp/ ```
+
+* Install the dependencies ``` npm install ```
+
+* Run the development server ``` npm run dev ```
+
+
 For more information about the available commands in this project check the Cookiecutter Django [Documentation](https://cookiecutter-django.readthedocs.io/en/latest/developing-locally-docker.html#build-the-stack)
-
-
 
 
 

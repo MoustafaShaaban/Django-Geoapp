@@ -54,7 +54,7 @@ class CreateFeature(LoginRequiredMixin, generic.CreateView):
     def get_context_data(self, **kwargs):
         map = folium.Map(
         tiles='cartodbdark_matter',
-        attr= 'Public Schools in Seattle'
+        attr= 'Geoapp built with Django and Folium'
     )
 
         folium.TileLayer('cartodbpositron').add_to(map)
