@@ -22,29 +22,6 @@ def index(request):
     return render(request, 'geoapp/map.html', map)
 
 
-def map_features(request):
-    map = folium.Map(
-        tiles='cartodbdark_matter',
-        attr= 'Public Schools in Seattle'
-    )
-
-    folium.TileLayer('cartodbpositron').add_to(map)
-
-    folium.LayerControl(position='bottomright').add_to(map)
-    Fullscreen().add_to(map)
-    LocateControl().add_to(map)
-    Geocoder().add_to(map)
-    folium.LatLngPopup().add_to(map)
-
-    map = map._repr_html_()
-
-    context = {
-        'map': map
-    }
-
-    return render(request, 'geoapp/create_feature.html', context)
-
-
 class CreateFeature(LoginRequiredMixin, generic.CreateView):
     model = Feature
     fields = ['name', 'type', 'description', 'latitude', 'longitude']
