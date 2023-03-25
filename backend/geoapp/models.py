@@ -1,10 +1,14 @@
 from django.db import models
-
+from django.contrib.auth import get_user_model
 # Create your models here.
+
+
+User = get_user_model()
 
 class Feature(models.Model):
     name = models.CharField(max_length=250, help_text='Feature Name')
     description = models.TextField(help_text='Feature Description')
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
     type = models.CharField(max_length=100, help_text='Feature Type (Hotel, Hospital, School, Park, ...)')
     latitude = models.FloatField(help_text='Latitude')
     longitude = models.FloatField(help_text='Longitude')

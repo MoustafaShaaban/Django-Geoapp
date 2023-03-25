@@ -28,6 +28,10 @@ class CreateFeature(LoginRequiredMixin, generic.CreateView):
     template_name = 'geoapp/create_feature.html'
     success_url = reverse_lazy('geoapp:index')
 
+    def form_valid(self, form):
+        form.instance.owner = self.request.user
+        return super().form_valid(form)
+
     def get_context_data(self, **kwargs):
         map = folium.Map(
         tiles='cartodbdark_matter',
@@ -64,6 +68,8 @@ def import_data(request):
             # Import now
             feature_resource.import_data(imported_data, dry_run=False)
             messages.success(request, 'Data Imported Successfully.')
+        else:
+            messages.warning(request, 'Could not import data')
 
     return render(request, 'geoapp/import_data.html')
 

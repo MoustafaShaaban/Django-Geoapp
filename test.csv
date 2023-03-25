@@ -1,4 +1,4 @@
-﻿,name,description,type,latitude,longitude
-,school 1,great school,school,30.123449999999998,31.123449999999998
-,hotel 1,great hotel,hotel ,-7.7110000000000003,-47.109400000000001
-,hospital 1,great hospital,hospital,43.580399999999997,63.632800000000003
+﻿,name,description,,type,latitude,longitude
+,school 1,great school,,school,30.123449999999998,31.123449999999998
+,hotel 1,great hotel,,hotel ,-7.7110000000000003,-47.109400000000001
+,hospital 1,great hospital,,hospital,43.580399999999997,63.632800000000003
